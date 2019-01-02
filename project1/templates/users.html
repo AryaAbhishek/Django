@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>help page</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}"/>
+  </head>
+  <body>
+    <h1>Hello i am in start.html</h1>
+    <div class="container">
+      <form method="post">
+        {{form.as_p}} <!--to get form in different peragraphs -->
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+      <!-- {% if details %}
+        <ol class='col'>
+          {% for cr in details %}
+            <li>User Info.</li>
+              <ul>
+                <li>First Name = {{ cr.FirstName }}</li>
+                <li>Last Name = {{ cr.LastName }}</li>
+                <li>Email = {{ cr.Email }}</li>
+              </ul>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <p> No  data found</p>
+      {% endif %} -->
+    </div>
+  </body>
+</html>

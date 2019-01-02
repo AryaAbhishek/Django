@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Django Application</title>
+    <link rel="stylesheet" href="{% static "css/goodCss.css" %}"/>
+  </head>
+  <body>
+    <h1>Hi this is a picture of taylor swift.</h1>
+    <img src="{% static "images/taylorSwift.jpg/" %}" alt="oh! i think she is busy.">
+    <p>{{insert_me}}</p>
+  </body>
+</html> -->
+
+  <!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Django Application</title>
+    <link rel="stylesheet" href="{% static "css/goodCss.css" %}"/>
+  </head>
+  <body>
+    <h1>Hi this is a picture of taylor swift.</h1>
+    <img src="{% static "images/taylorSwift.jpg" %}" alt="oh! i think she is busy.">
+    <div class = "djangoDiv1">
+      {% if Access_Record %}
+      <table>
+        <thead>
+          <th>Site name</th>
+          <th>date accessed</th>
+        </thead>
+        <tbody>
+          {% for acc in Access_Record %}
+          <tr>
+            <td>{{acc.name}}</td>
+            <td>{{acc.date}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>No access record found</p>
+      {% endif %}
+  </body>
+</html>
